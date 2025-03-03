@@ -1,7 +1,37 @@
 https://www.promisejs.org/implementing/
+https://www.youtube.com/watch?v=IxOJgcvlHHc
 
 
 Since a promise is just a state machine
+
+Ek promise kya hota hi, man lo maine tumhe bola ki aaj mai tuhmare sath kahi ghumne chalunga , par maine ye promise kia tumse , par maine ye bhi bola ki koi canform nahi hi to,ye abhi pending hi, mai thode der bad ye canform karunga ki mai jaunga ki nahi. 
+
+How we uses it. 
+
+```javascript
+function customPromise(value) {
+  return new Promise((resolve, reject) => {
+    if (value) {
+      resolve(value);  // Resolving the promise with the value
+    } else {
+      reject('Error: No value provided');  // Rejecting the promise if no value
+    }
+  });
+}
+
+// Usage of customPromise with then, catch, and finally
+customPromise('Some value')
+  .then((result) => {
+    console.log('Resolved with:', result);
+  })
+  .catch((err) => {
+    console.error('Caught an error:', err);
+  })
+  .finally(() => {
+    console.log('This will always run, regardless of resolution or rejection');
+  });
+
+```
 
 ```javascript
 // Promise states
